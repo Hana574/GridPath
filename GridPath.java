@@ -21,28 +21,28 @@ public class GridPath {
             if (grid[row][col + 1] < grid[row + 1][col])
             {
                 x = new Location(row, col + 1);
-                System.out.print(x.getRow());
-                System.out.print(x.getCol());
+                //System.out.print(x.getRow());
+                //System.out.print(x.getCol());
             }
             if (grid[row][col + 1] > grid[row + 1][col])
             {
                 x = new Location(row + 1, col);
-                System.out.print(x.getRow());
-                System.out.print(x.getCol());
+                //System.out.print(x.getRow());
+                //System.out.print(x.getCol());
             } 
             return x;
         }
         else if (col == 4 && row != 4)
         {
             x = new Location(row + 1, col);
-            System.out.print(x.getRow());
-            System.out.print(x.getCol());
+            //System.out.print(x.getRow());
+            //System.out.print(x.getCol());
         } 
         else if (col != 4 && row == 4)
         {
             x = new Location(row, col + 1);
-            System.out.print(x.getRow());
-            System.out.print(x.getCol());
+            //System.out.print(x.getRow());
+            //System.out.print(x.getCol());
         } 
         return x;
         
@@ -63,9 +63,9 @@ public class GridPath {
         {
             Location loc = getNextLoc(row, col);
             sum = sum + grid[row][col];
-            System.out.print(sum);
+            System.out.println(sum);
             row = loc.getRow();
-            System.out.print(row);
+            System.out.println(row);
             col = loc.getCol();
             System.out.print(col);
         }

@@ -10,7 +10,11 @@ public class Main {
         GridPath z = new GridPath(nums);
         int sum = 0;
         Location loc = z.getNextLoc(3, 3);
-        sum = sum + nums[4][3];
+        sum = sum + nums[loc.getRow()][loc.getCol()];
+        System.out.println(loc.getRow());
+        System.out.println(loc.getCol());
+        System.out.println(nums[loc.getRow()][loc.getCol()]);
         System.out.print(sum);
+        z.sumPath(3, 3);
     }
 }
