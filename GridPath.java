@@ -56,6 +56,20 @@ public class GridPath {
      * row and col do not specify the element in the last row and last column of
      * grid.
      */
-    public int sumPath(int row, int col) {
+    public void sumPath(int row, int col) {
+        int num = grid[row][col];
+        System.out.println("RUNNING");
+        while ((row != 4) || (col != 4)){
+        Location x = getNextLoc(row, col);
+        row = x.getRow();
+        col = x.getCol();
+        System.out.println("ROW: " + row + " Col: " + col);
+        num += grid[x.getRow()][x.getCol()];
+        System.out.println(num);
+        }
+        //if ((row == 4) && (col == 4)) num += grid[4][4];
+        System.out.println("SUM: " + num);
+
+
         /* to be implemented in part (b) */ }
 }
