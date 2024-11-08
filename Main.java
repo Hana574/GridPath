@@ -8,6 +8,7 @@ public class Main {
             {18, 22, 30, 25, 6}
         };
         GridPath z = new GridPath(nums);
-        z.sumPath(1, 2);
+        
+        System.out.println(z.sumPath(0, 0));
     }
 }

@@ -16,33 +16,33 @@ public class GridPath {
      */
     public Location getNextLoc(int row, int col) {
         Location x = new Location(row, col);
-        if (row != 4 && col != 4)
+        if (row != grid.length - 1 && col != grid[0].length - 1)
         {
             if (grid[row][col + 1] < grid[row + 1][col])
             {
                 x = new Location(row, col + 1);
-                System.out.print(x.getRow());
-                System.out.print(x.getCol());
+              //  System.out.print(x.getRow());
+                //System.out.print(x.getCol());
             }
             if (grid[row][col + 1] > grid[row + 1][col])
             {
                 x = new Location(row + 1, col);
-                System.out.print(x.getRow());
-                System.out.print(x.getCol());
+             //System.out.print(x.getRow());
+              //System.out.print(x.getCol());
             } 
             return x;
         }
-        else if (col == 4 && row != 4)
+        else if (col == grid[0].length - 1 && row != grid.length - 1)
         {
             x = new Location(row + 1, col);
-            System.out.print(x.getRow());
-            System.out.print(x.getCol());
+           // System.out.print(x.getRow());
+           // System.out.print(x.getCol());
         } 
-        else if (col != 4 && row == 4)
+        else if (col != grid[0].length - 1 && row == grid.length - 1)
         {
             x = new Location(row, col + 1);
-            System.out.print(x.getRow());
-            System.out.print(x.getCol());
+          //  System.out.print(x.getRow());
+           // System.out.print(x.getCol());
         } 
         return x;
         
@@ -56,19 +56,19 @@ public class GridPath {
      * row and col do not specify the element in the last row and last column of
      * grid.
      */
-    public void sumPath(int row, int col) {
+    public int sumPath(int row, int col) {
         int num = grid[row][col];
-        System.out.println("RUNNING");
-        while ((row != 4) || (col != 4)){
+        //System.out.println("RUNNING");
+        while (row != grid.length - 1 || col != grid[0].length - 1){
         Location x = getNextLoc(row, col);
         row = x.getRow();
         col = x.getCol();
-        System.out.println("ROW: " + row + " Col: " + col);
+        //System.out.println("ROW: " + row + " Col: " + col);
         num += grid[x.getRow()][x.getCol()];
-        System.out.println(num);
+        //System.out.println(num);
         }
-        //if ((row == 4) && (col == 4)) num += grid[4][4];
-        System.out.println("SUM: " + num);
+        //System.out.println("SUM: " + num);
+        return num;
 
 
         /* to be implemented in part (b) */ }
